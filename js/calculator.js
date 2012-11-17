@@ -51,6 +51,7 @@ function calculate () {
 // calculate discount percent function
 function discPercCalc (listPrice, customerType)
 {
+	//alert('inside discPercCalc');
 	if (customerType == 'R')
 	{
 		if (listPrice < 100) discountPercent = 0;
@@ -63,19 +64,24 @@ function discPercCalc (listPrice, customerType)
 		else discountPercent = 30;
 	}
 	discountPercent = parseFloat(discountPercent);
+	//alert('discountPercent = ' + discountPercent);
 	return discountPercent;
 }
 
 // calculate discount amount function
 function discAmountCalc (listPrice, discountPercent)
 {
+   //alert('inside discAmountCalc');
    var discAmount = listPrice * discountPercent * .01;
+   //alert('discAmount = ' + discAmount);
    return discAmount;
 }
 
 // calculate discount price amount
-function discPrice (listPrice, discount)
+function discPriceCalc (listPrice, discount)
 {
+   //alert('inside discPriceCalc');
    var discPrice = listPrice - discountPercent;
+   //alert('discPrice = ' + discPrice);
    return discPrice;
 }
